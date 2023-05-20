@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <img src="./logo.png" alt="">
+        </header>
+        <nav>
+            <ul>
+                <li><a href="">Trang chủ</a></li>
+                <li><a href="">HTML5 cơ bản</a></li>
+                <li><a href="">HTML5 nâng cao</a></li>
+                <li><a href="">Kỹ Thuật HTML5</a></li>
+                <li><a href="">Tin tức HTML5</a></li>
+                <li><a href="">Đăng kí</a></li>
+                <li><a href="">Đăng nhập</a></li>
+                <li><a href="">Liên hệ</a></li>
+            </ul>
+        </nav>
+    
+        <div class="content">
+            <address>
+                <div class="main-header">
+                    <h3>chào mừng bạn đến với tạp chí HTML5/Css3</h3>
+                </div>
+                <div class="main-content">
+                    <div class="input">
+                        <label for="">
+                            <p>Tên đăng nhập</p>
+                            <input type="text" >
+                        </label>
+                        <label for="">
+                            <p>Mật khẩu</p>
+                            <input type="password" >
+                        </label>
+                        <label for="">
+                            <p>Email</p>
+                            <input type="text" >
+                        </label>
+                        <label for="">
+                            <p>Thành phố</p>
+                            <select name="" id="">
+                                <option value="Hà Nội">Hà Nội</option>
+                                <option value="Hồ Chí Minh">Hồ Chí Minh</option>
+                                <option value="Đà Nẵng">Đà Nẵng</option>
+                                <option value="Hải Phòng">Hải Phòng</option>
+                                <option value="Đà Lạt">Đà Lạt</option>
+                            </select>
+                        </label>
+                        <label for="">
+                            <p>Độ tuổi trung bình </p>
+                            <input type="range" min="18" max="45" value="20">
+                        </label>
+            
+                    </div>
+            
+                    <div class="input-checkbox">
+                        <p>Bạn muốn theo dõi bài viết từ chủ đề nào</p>
+                        <div class="input-checked">
+                            <label for="">
+                                <input type="checkbox">
+                                <span>HTML5 cơ bản</span>
+                            </label>
+                            <label for="">
+                                <input type="checkbox">
+                                <span>CSS3 cơ bản</span>
+                            </label>
+                            <label for="">
+                                <input type="checkbox">
+                                <span>HTML5 nâng cao</span>
+                            </label>
+                            <label for="">
+                                <input type="checkbox">
+                                <span>HTML5 nâng cao</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="input-submit">
+                        <button>Làm lại</button>
+                        <button onclick="submit()">Đăng ký</button>
+                    </div>
+                </div>
+                <div class="main-footer">
+                    <h3>Thành phần HTML5</h3>
+                    <img src="./banner.jpg" alt="">
+                </div>
+            </address>
+            <aside>
+                <img src="./aside.jpg" alt="">
+            </aside>
+        </div>
+    
+        <footer>
+            <p>Đây là trang web phục vụ việc thực hành của sinh viên FPT Polytecnic</p>
+            <p>Nghiêm cấm sử dụng với mục đích thương mại</p>
+        </footer>
+    </div>
+
+    <script>
+        const input = document.querySelectorAll('.input input');
+        const selector = document.querySelector('select')
+        const checkboxSub = document.querySelectorAll('.input-checked input[type="checkbox"]')
+        console.log(checkboxSub[0].checked)
+        function submit() {
+            let isCheck = true
+            let ischeckbox = false
+            
+            input.forEach(item => {
+                if(item.value == '' ) {isCheck = false}
+            })
+            if (selector.value == "") {isCheck = false}
+
+            checkboxSub.forEach(item => {
+                if(item.checked) {ischeckbox = true}
+            })
+
+            if(isCheck == true && ischeckbox == true) {
+                alert("Đăng kí thành công")
+                input.forEach(item => {
+                    item.value=""
+                })
+                selector.value == ""
+                checkboxSub.forEach(item => {
+                    item.checked = false
+                })
+            }
+            if(isCheck == false || ischeckbox == false) { 
+                alert(Error('Đăng nhập không thành công'))
+            }
+        }
+    </script>
+</body>
+</html>

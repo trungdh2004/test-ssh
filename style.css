@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-style: normal;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: red;
+
+}
+input[type="range"] {
+    --webkit-appearance:none;
+    appearance: none;
+    height: 2px;
+    background-color: #ccc;
+}
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; 
+    appearance: none; 
+    width: 15px;
+    height: 15px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.wrapper {
+    max-width: 980px;
+    margin: auto;
+    background-color: #ebebeb;
+}
+header {
+    width: 100%;
+}
+header img {
+    display: block;
+    width: 100%;
+}
+nav {
+    width: 100%;
+    border: 2px solid #1893bf;
+    overflow: hidden;
+
+}
+nav ul {
+    height: 40px;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+nav ul li {
+    position: relative;
+    color: red;
+}
+nav ul li::after {
+    position: absolute;
+    content: "";
+    height: 45px;
+    top: -13px;
+    right: -20px;
+    width: 2px;
+    background-color: #1893bf;
+    transform: rotate(20deg);
+}
+
+.content {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+.main-header h3 {
+    margin-top: 10px;
+    font-size: 20px;
+    font-style: normal;
+    text-transform: uppercase;
+    color: #1893bf;
+    border-bottom: 2px solid #1893bf;
+}
+
+.main-content {
+    /* position: relative; */
+    left: 50px;
+    padding: 10px 100px 10px 0px;
+}
+
+.input label {
+    margin-top: 15px;
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    gap: 10px;
+}
+.input label select {
+    width: 300px;
+}
+.input label > input {
+    width: 300px;
+}
+.input-checkbox {
+    margin: 20px 0;
+    padding: 0 20px;
+}
+.input-checkbox p {
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+.input-checked {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0  0 0 100px;
+    column-gap: 50px;
+}
+.input-submit {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+
+}
+.input-submit button {
+    width: 100px;
+    height: 25px;
+    color: #1893bf;
+    font-size: 16px;
+}
+.main-footer h3 {
+    color: #1893bf;
+    font-size: 25px;
+    border-bottom: 2px solid #1893bf;
+}
+.main-footer img {
+    border-bottom: 2px solid #1893bf;
+}
+aside img {
+    height: 510px;
+}
+footer {
+    width: 100%;
+    margin-top: 20px;
+    border-top: 2px solid #1893bf;
+    height: 100px;
+    text-align: center;
+    padding: 20px;
+    line-height: 1.5;
+}
